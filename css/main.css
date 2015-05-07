@@ -1,7 +1,56 @@
-.ng-invalid .ng-dirty {
-  border-color: #fa797e; }
+body {
+  background: #bdc3c7; }
 
-.ng-valid .ng-dirty {
-  border-color: #78fa89; }
+img {
+  max-width: 100%; }
+
+ul {
+  padding: 0; }
+
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+/*clear fix*/
+.group::after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.nav {
+  height: 50px;
+  background: #34495e;
+  width: 100%;
+  color: #fff; }
+
+.header {
+  background: #3498db;
+  color: #fff;
+  height: 400px;
+  text-align: center;
+  padding-top: 100px; }
+  .header h1 {
+    margin: auto; }
+
+.contentCard {
+  background: #ecf0f1;
+  width: 85%;
+  margin: auto;
+  margin-top: 50px;
+  height: 450px; }
+  .contentCard h1 {
+    text-align: center; }
+
+.contentImage {
+  height: 200px;
+  background-size: cover;
+  background-position-y: -37px; }
+
+.contentBottom {
+  background: #3498db;
+  width: 100%; }
+  .contentBottom div {
+    float: left; }
 
 /*# sourceMappingURL=main.css.map */

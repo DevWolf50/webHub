@@ -1,29 +1,32 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="gems">
+<html lang="en" ng-app="gemsData">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale-1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
   </head>
-
-    <body ng-controller="GemController as gems">
+  <body ng-controller="ContentController as contentCtrl">
+    <div class="nav">
+      <p>nav<p>
+    </div>
+    <div class="header">
       <h1> MVC Frameworks </h1>
-      <ul class="list-group">
-        <li class="list-group-item" ng-repeat="product in gems.products | orderBy:'-rating'">
+    </div>
+  <ul class="contentCards" ng-repeat="contentCard in contentCards">
+    <li class="contentCard">
+      <div class="contentImage" ng-style="{'background-image':'url({{contentCard.image}})'}">
+        hello
+      </div>
+      <h1>{{contentCard.name}}</h1>
+      <div class="contentBottom group">
+        <div><h2>Rating</h2></div>
+        <div><h2>Popularity</h2></div>
+      </div>
+    </li>
+  </ul>
 
-          <h3>
-            <product-title></product-title>
 
-          </h3>
-          <img ng-src="{{product.images[0].full}}"/>
-
-          <product-panels></product-panels>
-
-
-
-      </li>
-    </ul>
     <script type ="text/javascript" src="angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
   </body>

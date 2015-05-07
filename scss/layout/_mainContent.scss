@@ -1,0 +1,31 @@
+.contentCards {
+
+}
+
+.contentCard {
+  background: $backgroundColor;
+  width: 85%;
+  margin: auto;
+  margin-top: 50px;
+  height: 450px;
+
+  h1 {
+    text-align: center;
+  }
+
+}
+
+.contentImage {
+  height: 200px;
+  background-size:cover;
+  background-position-y: -37px;
+}
+
+.contentBottom {
+  background: $primaryColor;
+  width: 100%;
+  div {
+    float: left;
+    
+  }
+}

@@ -1,61 +1,21 @@
-(function() {
-  var app = angular.module('gems', []);
-  app.controller('GemController', function () {
-    this.products = gems;
 
-  });
+(function () {
+angular.module("gemsData", [])
+.controller("ContentController", function ($scope) {
+  $scope.contentCards = gems;
 
-
-  app.controller("ReviewController",function () {
-    this.review ={};
-    this.addReview = function (product) {
-      product.reviews.push(this.review);
-      this.review={};
-    }
-  });
-
-  app.directive('productTitle', function () {
-    return {
-      restrict: 'E',
-      templateUrl:'product-title.html'
-    };
-
-  });
-
-  app.directive('productPanels', function () {
-    return {
-      restrict:'E',
-      templateUrl: 'product-panels.html',
-      controller: function () {
-        this.tab = 1;
-        this.selectTab = function (setTab) {
-          this.tab = setTab;
-        };
-
-        this.isSelected = function (checkTab) {
-          return this.tab === checkTab;
-        };
-
-
-      },
-      controllerAs: 'panels'
-    };
-
-  });
-
+});
 
   var gems =[
     {
       class: "FrontEnd FrameWork",
       name: 'Angular',
       rating:5,
+      popularity:98,
+      jobMarket:95,
       description:'Angular is a front ened framework developed by Google.Its one of the most popular frame works out there.',
-      images: [
-        {
-          full:'angular.jpg',
-          thumb:'diasmall.jpg'
-        }
-      ],
+      image:'angular.jpg',
+
       reviews:[
         {
           stars: 5,
@@ -71,15 +31,14 @@
       canPurchase: true
     },
     {
+      class: "FrontEnd FrameWork",
       name:"React",
       rating: 4.5,
+      popularity:85,
+      jobMarket:62,
       description: "React is the one og the new hottest frameworks. It was developed by facebook",
-      images: [
-        {
-          full:'react.png',
-          thumb:'diasmall.jpg'
-        }
-      ],
+      image:'react.png',
+
       reviews:[
         {
           stars: 4,
