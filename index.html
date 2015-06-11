@@ -19,10 +19,28 @@
         hello
       </div>
       <h1>{{contentCard.name}}</h1>
-      <p>{{contentCard.description}}</p>
+      <div>
+        <ul>
+          <li ng-class="{active: tab===1}"> <a href="" ng-click="tab = 1">Description</a></li>
+          <li ng-class="{active: tab ===1}"> <a href="" ng-click=" tab = 2">Specifications</a></li>
+          <li ng-class="{active: tab===1}"> <a href="" ng-click=" tab = 3">Rewviews</a></li>
+        </ul>
+    </div>
+      <div ng-show="tab ===1">
+        <h4> Description</h4>
+        <p>{{contentCard.description}}</p>
+      </div>
+      <div ng-show="tab ===2">
+        <h4> Specifications</h4>
+        <p>none yet</p>
+      </div>
+      <div ng-show="tab ===3">
+        <h4>Reviews</h4>
+        <p>none yet</p>
+      </div>
       <div class="contentBottom group">
         <div><h2>Rating: {{contentCard.rating}}</h2></div>
-        <div><h2>Popularity</h2></div>
+        <div><h2>Popularity: {{contentCard.popularity}}</h2></div>
       </div>
     </li>
   </ul>

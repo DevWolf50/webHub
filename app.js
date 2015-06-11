@@ -6,6 +6,9 @@ angular.module("gemsData", [])
 
 });
 
+angular.module("gemsData", [])
+.controller("")
+
   var gems =[
     {
       class: "FrontEnd FrameWork",
@@ -28,7 +31,6 @@ angular.module("gemsData", [])
           author:"tim@hater.com"
         }
       ],
-      canPurchase: true
     },
     {
       class: "FrontEnd FrameWork",
@@ -51,7 +53,6 @@ angular.module("gemsData", [])
           author:"joe@rogan.com"
         }
       ],
-      canPurchase: true
     }
 ];
 
