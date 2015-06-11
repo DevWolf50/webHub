@@ -1,29 +1,43 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="gems">
+<html lang="en" ng-app="gemData">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale-1">
+    <meta name="viewport" content="width=device-width,intial-scale-1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <title>DevHub</title>
   </head>
+  <body ng-controller="GemController as GemCtrl">
+    <div class="nav">
+      <p>nav</p>
+    </div>
+    <header>
+      <h1>MVC Frameworks</h1>
+    </header>
+    <div class="contentCards">
+      <ul class="contentCard" ng-repeat="content in contents">
+        <li>{{content.name}}</li>
+        <li>
+          <ul>
+            <li>description</li>
+            <li>Reviews</li>
+          </ul>
 
-    <body ng-controller="GemController as gems">
-      <h1> MVC Frameworks </h1>
-      <ul class="list-group">
-        <li class="list-group-item" ng-repeat="product in gems.products | orderBy:'-rating'">
+        </li>
+        <div ng-show="">
+          {{content.description}}
+        </div>
+        <div ng-show=""ng-repeat="review in content.reviews">
+          {{review.stars}}
+          {{review.author}}
+          {{review.body}}
+        </div>
 
-          <h3>
-            <product-title></product-title>
-
-          </h3>
-          <img ng-src="{{product.images[0].full}}"/>
-
-          <product-panels></product-panels>
+      </ul>
+    </div>
 
 
 
-      </li>
-    </ul>
     <script type ="text/javascript" src="angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
   </body>
