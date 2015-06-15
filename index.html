@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="gemData">
+<html lang="en" ng-app="gemsData">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,intial-scale-1">
@@ -7,37 +7,58 @@
     <link rel="stylesheet" href="css/main.css">
     <title>DevHub</title>
   </head>
-  <body ng-controller="GemController as GemCtrl">
+  <body ng-controller="ContentController as contentCtrl">
     <div class="nav">
-      <p>nav</p>
+      <p>nav<p>
     </div>
-    <header>
-      <h1>MVC Frameworks</h1>
-    </header>
-    <div class="contentCards">
-      <ul class="contentCard" ng-repeat="content in contents">
-        <li>{{content.name}}</li>
-        <li>
-          <ul>
-            <li>description</li>
-            <li>Reviews</li>
-          </ul>
-
-        </li>
-        <div ng-show="">
-          {{content.description}}
-        </div>
-        <div ng-show=""ng-repeat="review in content.reviews">
-          {{review.stars}}
-          {{review.author}}
-          {{review.body}}
-        </div>
-
-      </ul>
+    <div class="header">
+      <h1> MVC Frameworks </h1>
     </div>
+  <ul class="contentCards" ng-repeat="contentCard in contentCards">
+    <li class="contentCard">
+      <div class="contentImage" ng-style="{'background-image':'url({{contentCard.image}})'}">
+        hello
+      </div>
+      <h1>{{contentCard.name}}</h1>
+      <div ng-controller="PannelController as pannelCtrl">
+        <ul>
+          <li ng-class="{active:checkTab(1)}"> <a href="" ng-click="setTab(1)">Description</a></li>
+          <li ng-class="{active:checkTab(2)}"> <a href="" ng-click=" setTab(2)">Specifications</a></li>
+          <li ng-class="{active:checkTab(3)}"> <a href="" ng-click=" setTab(3)">Reviews</a></li>
+        </ul>
+        <div ng-show="tab ===1">
+          <h4> Description</h4>
+          <p>{{contentCard.description}}</p>
+        </div>
+        <div ng-show="tab ===2">
+          <h4> Specifications</h4>
+          <p>none yet</p>
+        </div>
+        <div ng-show="tab ===3">
+          <h4>Reviews</h4>
+          <form ng-controller="FormControlleras formCtrl" ng-submit="">
+            <label for="userName">Name</name>
+            <input type="text" id="userName"></input>
+            <label for="userEmail">email</input>
+            <input type="email" id="userEmail"></input>
+            <label for="userComment">Comment</label>
+            <input type="textarea" id="userComment"></input>
+            <input type='submit'></input>
+          </form>
+          <div ng-repeat="review in contentCard.reviews">
 
-
-
+          <h3>stars: {{review.stars}}</h3>
+          <p>{{review.body}}</p>
+          <cite>By:{{review.author}}</cite>
+        </div>
+        </div>
+    </div>
+      <div class="contentBottom group">
+        <div><h2>Rating: {{contentCard.rating}}</h2></div>
+        <div><h2>Popularity: {{contentCard.popularity}}</h2></div>
+      </div>
+    </li>
+  </ul>
     <script type ="text/javascript" src="angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
   </body>

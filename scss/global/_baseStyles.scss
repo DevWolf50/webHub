@@ -1,0 +1,25 @@
+body {
+  background: $accentColor;
+}
+
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  padding: 0;
+
+}
+li {
+  list-style:none;
+  padding: 0;
+  margin:0;
+}
+
+/*clear fix*/
+.group::after {
+  content:"";
+  display:table;
+  clear:both;
+}

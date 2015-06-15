@@ -1,13 +1,5 @@
-.ng-invalid{
-  .ng-dirty{
-    border-color: #fa797e;
-
-
-  }
-}
-.ng-valid{
-  .ng-dirty{
-    border-color: #78fa89
-  }
-
-}
+@import 'global/variables.scss';
+@import 'global/baseStyles.scss';
+@import 'layout/navigation.scss';
+@import 'layout/header.scss';
+@import 'layout/mainContent.scss';
