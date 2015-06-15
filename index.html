@@ -2,9 +2,10 @@
 <html lang="en" ng-app="gemsData">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale-1">
+    <meta name="viewport" content="width=device-width,intial-scale-1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <title>DevHub</title>
   </head>
   <body ng-controller="ContentController as contentCtrl">
     <div class="nav">
@@ -19,31 +20,38 @@
         hello
       </div>
       <h1>{{contentCard.name}}</h1>
-      <div ng-controller="PannelControler as PannelCtrl">
+      <div ng-controller="PannelController as pannelCtrl">
         <ul>
           <li ng-class="{active:checkTab(1)}"> <a href="" ng-click="setTab(1)">Description</a></li>
-          <li ng-class="{active:checkTab(2)}"> <a href="" ng-click="setTab(2)">Specifications</a></li>
-          <li ng-class="{active:checkTab(3)}"> <a href="" ng-click="setTab(3)">Rewviews</a></li>
+          <li ng-class="{active:checkTab(2)}"> <a href="" ng-click=" setTab(2)">Resources</a></li>
+          <li ng-class="{active:checkTab(3)}"> <a href="" ng-click=" setTab(3)">Reviews</a></li>
         </ul>
-
-      <div ng-show="tab ===1">
-        <h4> Description</h4>
-        <p>{{contentCard.description}}</p>
-      </div>
-      <div ng-show="tab ===2">
-        <h4> Specifications</h4>
-        <p>none yet</p>
-      </div>
-      <div ng-show="tab ===3">
-        <h4>Reviews</h4>
-        <div ng-repeat="review in contentCard.reviews ">
-          <p>Stars:{{review.stars}}</p>
-          <p>{{review.body}}</p>
-          <cite>by:{{review.author}}</cite>
-
+        <div ng-show="tab ===1">
+          <h4> Description</h4>
+          <p>{{contentCard.description}}</p>
         </div>
+        <div ng-show="tab ===2">
+          <h4> Resources</h4>
+          <p>none yet</p>
+        </div>
+        <div ng-show="tab ===3">
+          <h4>Reviews</h4>
+          <form>
+            <label for="userName">Name</name>
+            <input type="text" id="userName"></input>
+            <label for="userEmail">email</input>
+            <input type="email" id="userEmail"></input>
+            <label for="userComment">Comment</label>
+            <input type="textarea" id="userComment"></input>
+            <input type='submit'></input>
+          </form>
+          <div ng-repeat="review in contentCard.reviews">
 
-      </div>
+          <h3>stars: {{review.stars}}</h3>
+          <p>{{review.body}}</p>
+          <cite>By:{{review.author}}</cite>
+        </div>
+        </div>
     </div>
       <div class="contentBottom group">
         <div><h2>Rating: {{contentCard.rating}}</h2></div>
@@ -51,8 +59,6 @@
       </div>
     </li>
   </ul>
-
-
     <script type ="text/javascript" src="angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
   </body>
