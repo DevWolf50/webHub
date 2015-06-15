@@ -1,13 +1,20 @@
 
 (function () {
-angular.module("gemsData", [])
-.controller("ContentController", function ($scope) {
+var app = angular.module("gemsData", []);
+app.controller("ContentController", function ($scope) {
   $scope.contentCards = gems;
 
 });
 
-angular.module("gemsData", [])
-.controller("")
+app.controller("PannelControler", function($scope) {
+  $scope.tab;
+  $scope.setTab = function (setTab) {
+    $scope.tab = setTab;
+  }
+  $scope.checkTab = function (checkTab) {
+    return $scope.tab === checkTab;
+  }
+});
 
   var gems =[
     {
