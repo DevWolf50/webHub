@@ -1,0 +1,61 @@
+<div>
+  <a ng-href="" ng-click="clicking(true)"><h3> Learn More </h3></a>
+</div>
+
+<div ng-show="clicked">
+  <ul>
+    <li ng-class="{active:checkTab(1)}"> <a href="" ng-click="setTab(1)">Description</a></li>
+    <li ng-class="{active:checkTab(2)}"> <a href="" ng-click=" setTab(2)">Resources</a></li>
+    <li ng-class="{active:checkTab(3)}"> <a href="" ng-click=" setTab(3)">Reviews</a></li>
+  </ul>
+  <div ng-show="tab ===1">
+    <h4> Description</h4>
+    <p>{{contentCard.description}}</p>
+  </div>
+  <div ng-show="tab ===2">
+    <h4> Resources</h4>
+    <div>
+      <a ng-href="{{contentCard.downloadLink}}">Download</a>
+      <a ng-href="{{contentCard.docsLink}}">Documentation</a>
+      <h2>Training</h2>
+      <h3>Learn or Level Up</h3>
+      <div ng-repeat="training in contentCard.trainings">
+        <h3>{{training.name}}</h3>
+        <p>with {{training.websiteName}}</p>
+        <a ng-href="{{training.link}}">Learn More</a>
+      </div>
+
+    </div>
+  </div>
+  <div ng-show="tab ===3">
+    <h4>Reviews</h4>
+
+    <div ng-repeat="review in contentCard.reviews">
+
+    <h3>stars: {{review.stars}}</h3>
+    <p>{{review.body}}</p>
+    <cite>By:{{review.author}}</cite>
+  </div>
+  <div ng-controller="ReviewController as reviewCtrl">
+    <div>
+      <h3>stars:{{review.stars}}</h3>
+      <p>{{review.body}}</p>
+      <cite>By:{{review.author}}</cite>
+  </div>
+  <form name="reviewForm" ng-submit="reviewForm.$valid && addReview(contentCard)" novalidate >
+    <select ng-model="review.stars" required>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+    <input type="email" ng-model="review.author" required></input>
+    <textarea ng-model="review.body" required></textarea>
+    <input type="submit" value="Submit"/>
+  </form>
+</div>
+
+
+  </div>
+</div>

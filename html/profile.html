@@ -1,0 +1,44 @@
+
+<a href="" ng-click="clicking(true)"><h3> profile </h3></a>
+<div ng-show="clicked">
+  <div class="userPicture" ng-style="{'background-image': 'url({{user.avatar}})' }">
+    hello
+  </div>
+  <h1>{{ user.username }}</h1>
+  <h2>{{ user.bio }}</h2>
+  <a ng-href="{{ user.website }}"> <h3> My website </h3></a>
+  <h2> My Favorite Web Technology: {{ user.favoriteWebTech }}</h2>
+  <a href="" ng-click="editMode(true)"> <h3> Edit Profile </h3> </a>
+    <div>
+      <h2>Recent Likes </h2>
+      <ul class="recentLikes" >
+        <li ng-repeat="recentLike in user.recentLikes">
+          <h3>{{ recentLike.name }}</h3>
+          <h3>Popuarity: {{ recentLike.popularity }}</h3>
+          <a ng-href="link"> <h3> Learn More </h3> </a>
+        </li>
+
+
+      </ul>
+    </div>
+
+
+
+</div>
+<div ng-show="edit">
+  <div class="userPicture" ng-style="{'background-image': 'url({{user.avatar}})' }">
+    hello
+  </div>
+
+  <form name="editProfile" ng-submit="submit()" novalidate>
+    <input ng-model="editedProfile.username"type="text" placeholder="{{ user.username }}" required/>
+    <input ng-model="editedProfile.bio" placeholder="{{ user.bio }}" required/>
+    <input ng-model="editedProfile.website" type="link" placeholder="{{ user.website }}"/ required> <h3> My website </h3>
+    <h2> My Favorite Web Technology:</h2>
+    <input ng-model="editedProfile.favoriteWebTech" type="text" placeholder="{{ user.favoriteWebTech }}" required/>
+    <input type="submit" ng-click="editMode(true)"/>
+</form>
+
+
+
+</div>

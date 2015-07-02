@@ -1,5 +1,5 @@
 body {
-  background: #bdc3c7; }
+  background: #efecec; }
 
 img {
   max-width: 100%; }
@@ -19,7 +19,7 @@ li {
   clear: both; }
 
 .nav {
-  height: 50px;
+  height: 100%;
   background: #34495e;
   width: 100%;
   color: #fff; }
@@ -34,11 +34,10 @@ li {
     margin: auto; }
 
 .contentCard {
-  background: #ecf0f1;
+  background: white;
   width: 85%;
   margin: auto;
-  margin-top: 50px;
-  height: 450px; }
+  margin-top: 50px; }
   .contentCard h1 {
     text-align: center; }
 

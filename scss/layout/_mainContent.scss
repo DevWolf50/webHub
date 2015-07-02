@@ -3,11 +3,10 @@
 }
 
 .contentCard {
-  background: $backgroundColor;
+  background: white;
   width: 85%;
   margin: auto;
   margin-top: 50px;
-  height: 450px;
 
   h1 {
     text-align: center;
@@ -26,6 +25,6 @@
   width: 100%;
   div {
     float: left;
-    
+
   }
 }

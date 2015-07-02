@@ -8,58 +8,40 @@
     <title>DevHub</title>
   </head>
   <body ng-controller="ContentController as contentCtrl">
+    <div class="header">
+      <div class="headerNav">
+        <h1>web hub</h1>
+      </div>
+      <div class="headerMain">
+        <h1>A Central Station For all things Web Development.</h1>
+        <h3>All the best web development tools in one place. Dont get lost in space.</h3>
+      </div>
+    </div>
     <div class="nav">
       <p>nav<p>
+      <profile></profile>
+      <login></login>
     </div>
-    <div class="header">
+    <div class="Subheader">
       <h1> MVC Frameworks </h1>
     </div>
   <ul class="contentCards" ng-repeat="contentCard in contentCards">
     <li class="contentCard">
       <div class="contentImage" ng-style="{'background-image':'url({{contentCard.image}})'}">
-        hello
       </div>
       <h1>{{contentCard.name}}</h1>
-      <div ng-controller="PannelController as pannelCtrl">
-        <ul>
-          <li ng-class="{active:checkTab(1)}"> <a href="" ng-click="setTab(1)">Description</a></li>
-          <li ng-class="{active:checkTab(2)}"> <a href="" ng-click=" setTab(2)">Resources</a></li>
-          <li ng-class="{active:checkTab(3)}"> <a href="" ng-click=" setTab(3)">Reviews</a></li>
-        </ul>
-        <div ng-show="tab ===1">
-          <h4> Description</h4>
-          <p>{{contentCard.description}}</p>
-        </div>
-        <div ng-show="tab ===2">
-          <h4> Resources</h4>
-          <p>none yet</p>
-        </div>
-        <div ng-show="tab ===3">
-          <h4>Reviews</h4>
-          <form>
-            <label for="userName">Name</name>
-            <input type="text" id="userName"></input>
-            <label for="userEmail">email</input>
-            <input type="email" id="userEmail"></input>
-            <label for="userComment">Comment</label>
-            <input type="textarea" id="userComment"></input>
-            <input type='submit'></input>
-          </form>
-          <div ng-repeat="review in contentCard.reviews">
+      <h3>{{contentCard.shortDescription}}</h3>
+      <nav-pannels></nav-pannels>
 
-          <h3>stars: {{review.stars}}</h3>
-          <p>{{review.body}}</p>
-          <cite>By:{{review.author}}</cite>
-        </div>
-        </div>
-    </div>
       <div class="contentBottom group">
         <div><h2>Rating: {{contentCard.rating}}</h2></div>
         <div><h2>Popularity: {{contentCard.popularity}}</h2></div>
       </div>
     </li>
   </ul>
-    <script type ="text/javascript" src="angular.min.js"></script>
-    <script type="text/javascript" src="app.js"></script>
+    <script type ="text/javascript" src="/js/vendors/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+    <script type="text/javascript" src="/js/profile.js"></script>
+    <script type="text/javascript" src="/js/pannels.js"></script>
   </body>
 </html>

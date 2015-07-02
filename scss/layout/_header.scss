@@ -1,5 +1,5 @@
 .header {
-  background:$primaryColor;
+  background:linearGradient();
   color:#fff;
   height: 400px;
   text-align: center;
@@ -10,4 +10,13 @@
 
   }
 
+}
+
+.gradient {
+  background-image:
+    linear-gradient(
+      to top left,
+      #182848,#4b6cb7
+    )
+  ;
 }
