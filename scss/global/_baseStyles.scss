@@ -3,12 +3,45 @@
 }
 
 body {
-  background: $accentColor;
+  background: $backgroundColor;
+  font-family: $Lato;
+  font-size: 1em;
+  font-weight: normal;
 }
 
+h1 {
+  font-size: 3rem;
+  font-weight: 300;
+  opacity: .90;
+  margin:4px;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  opacity: 0.90;
+  margin:4px;
+}
+
+h3 {
+  font-size: 1.125rem;
+  opacity: .75;
+  font-weight: 300;
+  margin:4px;
+
+}
+
+p {
+  opacity: 0.85;
+}
 
 img {
   max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
 
 ul {
@@ -21,9 +54,10 @@ li {
   margin:0;
 }
 
-/*clear fix*/
-.group::after {
-  content:"";
-  display:table;
-  clear:both;
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
 }

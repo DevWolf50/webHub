@@ -3,28 +3,91 @@
 }
 
 .contentCard {
-  background: white;
+  background: $primaryColor;
   width: 85%;
   margin: auto;
   margin-top: 50px;
+  text-align: center;
 
   h1 {
+    color: $headerColor;
     text-align: center;
+  }
+
+  h3 {
+    color: $secondaryAccentColor;
+
+  }
+
+  p{
+    color: $accentColor;
   }
 
 }
 
+.cardContent {
+  min-height: 161px;
+}
+
 .contentImage {
-  height: 200px;
+  height: 162px;
   background-size:cover;
   background-position-y: -37px;
 }
 
 .contentBottom {
-  background: $primaryColor;
-  width: 100%;
-  div {
-    float: left;
+  background: $secondaryAccentColor;
 
+  h3{
+    color: $headerColor;
+    text-align: left;
+    margin-top: 10px;
+  }
+
+
+}
+
+.lastBotStat {
+
+  h3 {
+      text-align: right;
+  }
+
+}
+
+.imageWrapper {
+  background: $primaryColor;
+  opacity: .5;
+}
+
+
+
+//pannels html styles------------------------------------
+
+.learnMoreButton {
+  @include mainButton($headerColor,$accentColor,$headerColor);
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  h3 {
+    color: $headerColor;
+  }
+
+}
+
+
+.navPannel {
+  svg {
+    width:70px;
+  }
+}
+
+.active {
+  h3{
+    color: $secondaryColor;
+  }
+
+  svg {
+    fill: $secondaryColor;
   }
 }
